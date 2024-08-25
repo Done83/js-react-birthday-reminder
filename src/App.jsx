@@ -1,6 +1,7 @@
 import { useState } from "react";
 import data from "./data";
 import Person from "./Person";
+import List from "./List";
 
 const App = () => {
   const [people, setPeople] = useState(data);
@@ -13,19 +14,12 @@ const App = () => {
     setPeople(data);
   };
   return (
-    <div>
-      <h1>{people.length} Birthdays today</h1>
-      <Person people={people} />
-      {people.length === 0 ? (
-        <button className="btn" onClick={resetList}>
-          Reset List
-        </button>
-      ) : (
-        <button className="btn" onClick={clearList}>
-          Clear List
-        </button>
-      )}
-    </div>
+    <main>
+      <section className="container">
+        <h3>{people.length} Birthdays today</h3>
+        <List people={people} />
+      </section>
+    </main>
   );
 };
 export default App;
