@@ -1,4 +1,14 @@
+import { useState } from "react";
+import data from "./data";
+import Person from "./Person";
+
 const App = () => {
-  return <h2>Birthday Reminder - Starter</h2>;
+  const [people, setPeople] = useState(data);
+  return (
+    <div>
+      <h1>{people.length} Birthdays today</h1>
+      <Person people={people} />
+    </div>
+  );
 };
 export default App;
